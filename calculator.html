@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+	button{
+	background-color:#008B8B;
+	color:white;
+	width:50px;
+	height:30px;
+	}
+	div{
+	width:150px;
+	height:30px;
+	font-size:20px;
+	background-color:#6495ED;
+	color:white;
+	margin-left:50%;
+	transform:translateX(-50%);
+	}
+	</style>
+</head>
+<body style="text-align: center;">
+    <button onclick="constructequation('+')">+</button>
+    <button onclick="constructequation('-')">-</button>
+    <button onclick="constructequation('*')">*</button>
+    <button onclick="constructequation('/')">/</button><br>
+    <button onclick="constructequation('1')">1</button>
+    <button onclick="constructequation('2')">2</button>
+    <button onclick="constructequation('3')">3</button><br>
+    <button onclick="constructequation('4')">4</button>
+    <button onclick="constructequation('5')">5</button>
+    <button onclick="constructequation('6')">6</button><br>
+    <button onclick="constructequation('7')">7</button>
+    <button onclick="constructequation('8')">8</button>
+    <button onclick="constructequation('9')">9</button><br>
+    <button onclick="constructequation('0')">0</button>
+    <button onclick="reset()">delete</button>
+    <button onclick="solve()">=</button>
+    <div id="container"></div>
+    <script>
+        var a="";
+        function constructequation(character){
+            a=a+""+character;
+            var parent=document.getElementById("container").innerHTML=a;
+        }
+        function solve(){
+            a=eval(a);
+            console.log(a);
+            var parent=document.getElementById("container").innerHTML=a;
+            
+            
+        }
+        function reset(){
+            var parent=document.getElementById("container").innerHTML="";
+            a="";
+        }
+    </script>
+</body>
+</html>
